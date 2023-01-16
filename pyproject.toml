@@ -6,15 +6,14 @@ build-backend = "setuptools.build_meta"
 name = "my_python_project"
 version = "0.0.1"
 authors = [
-  { name="Brandon Karchewski",
-    email="brandon.karchewski@ucalgary.ca" },
+  { name="Brandon Karchewski", email="brandon.karchewski@ucalgary.ca" },
 ]
 description = "An example Python package"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
-  numpy,
-  matplotlib,
+  "numpy",
+  "matplotlib",
 ]
 classifiers = [
   "Programming Language :: Python :: 3",
