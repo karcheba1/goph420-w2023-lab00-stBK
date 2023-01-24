@@ -1,21 +1,24 @@
 import numpy as np
 
-from my_python_package.operators import (
-        add,
-        multiply,
+from fem_1d_heat.element import (
+        global_to_local,
+        shape,
         )
 
-def main():
 
-    # test for scalars
-    print(f'add(1, 3): {add(1, 3)}')
-    print(f'multiply(2, 12.): {multiply(2, 12.)}')
-    
-    # test for arrays
-    A = np.array([[1, 2, 3], [4, 5, 6]])
-    B = 2. * np.ones(A.shape)
-    print(f'add(A, B):\n{add(A, B)}')
-    print(f'multiply(A, B):\n{multiply(A, B)}')
+def main():
+    print('successfully imported fem_1d_heat')
+
+    z = 3.
+    z_e = np.array([0, 6])
+    print(f'testing global_to_local({z}, {z_e}): {global_to_local(z, z_e)}')
+
+    z = 2.
+    z_e = np.array([1, 4])
+    print(f'testing global_to_local({z}, {z_e}): {global_to_local(z, z_e)}')
+
+    s = 0.9
+    print(f'testing shape({s}): {shape(s)}')
 
 
 if __name__ == '__main__':
