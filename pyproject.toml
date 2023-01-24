@@ -3,12 +3,12 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "my_python_package"
+name = "fem_1d_heat"
 version = "0.0.1"
 authors = [
   { name="Brandon Karchewski", email="brandon.karchewski@ucalgary.ca" },
 ]
-description = "An example Python package"
+description = "Finite element analysis for 1d heat conduction"
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
