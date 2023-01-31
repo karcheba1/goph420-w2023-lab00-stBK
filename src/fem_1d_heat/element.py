@@ -18,7 +18,7 @@ def global_to_local(z, z_e):
     return (z - z_e[0]) / (z_e[1] - z_e[0])
 
 
-def shape(s):
+def shape_matrix(s):
     """Calculate the shape function matrix for 1d linear interpolation.
 
     Parameters
@@ -28,7 +28,25 @@ def shape(s):
 
     Returns
     -------
-    numpy.ndarray, shape = (2,)
+    numpy.ndarray, shape = (1, 2)
         The shape function matrix
     """
-    return np.array([(1 - s), s])
+    return np.array([[(1 - s), s]])
+
+
+def gradient_matrix(s, dz):
+    """Calculate the gradient matrix for 1d linear interpolation.
+
+    Parameters
+    ----------
+    s : float
+        The local coordinate in the element
+    dz : float
+        The scaling factor from global to local coordinates
+
+    Returns
+    -------
+    numpy.ndarray, shape = (1, 2)
+        The gradient matrix
+    """
+    return np.array([[-1, 1]]) / dz
